@@ -1,0 +1,24 @@
+# I am a comment, and I want to say that the variable CC will be
+# the compiler to use.
+CC=g++
+# Hey!, I am comment number 2. I want to say that CFLAGS will be the
+# options I'll pass to the compiler.
+CFLAGS=-c -Wall
+
+all: abstract_creature
+
+abstract_creature: main.o creature.o orc.o
+	$(CC) main.o creature.o orc.o -o abstract_creature
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+creature.o: creature.cpp
+	$(CC) $(CFLAGS) creature.cpp
+
+orc.o: orc.cpp
+	$(CC) $(CFLAGS) orc.cpp
+
+clean:
+	rm -f *o abstract_creature
+

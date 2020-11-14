@@ -1,0 +1,3 @@
+all:
+	g++ main.cpp creature.cpp orc.cpp -o abstract_creature
+

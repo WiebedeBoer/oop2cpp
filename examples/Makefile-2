@@ -1,0 +1,17 @@
+all: abstract_creature
+
+abstract_creature: main.o creature.o orc.o
+	g++ main.o creature.o orc.o -o abstract_creature
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+orc.o: orc.cpp
+	g++ -c orc.cpp
+
+creature.o: creature.cpp
+	g++ -c creature.cpp
+
+clean:
+	rm -f *o abstract_creature
+
